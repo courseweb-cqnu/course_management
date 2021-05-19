@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.second.dao.TeacherDao">
+    <resultMap id="BaseResultMap" type="com.example.second.entity.Teacher">
+        <id column="uid" property="uid" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="gender" property="gender" jdbcType="VARCHAR"/>
+        <result column="course" property="course" jdbcType="VARCHAR"/>
+        <result column="salary" property="salary" jdbcType="BIGINT"/>
+        <result column="retired" property="retired" jdbcType="VARCHAR"/>
+        <result column="teaching_age" property="teaching_age" jdbcType="INTEGER"/>
+        <result column="tel_number" property="tel_number" jdbcType="BIGINT"/>
+        <result column="politics_sta" property="politics_sta" jdbcType="VARCHAR"/>
+        <result column="house_address" property="house_address" jdbcType="VARCHAR"/>
+        <result column="grade" property="grade" jdbcType="VARCHAR"/>
+        <result column="native_place" property="native_place" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="stu_estimate" property="stu_estimate" jdbcType="INTEGER"/>
+        <result column="dateofentry" property="dateofentry" jdbcType="VARCHAR"/>
+        <result column="dateofbirth" property="dateofbirth" jdbcType="VARCHAR"/>
+        <result column="edu_background" property="edu_background" jdbcType="VARCHAR"/>
+        <result column="motto" property="motto" jdbcType="VARCHAR"/>
+        <result column="trait" property="trait" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        uid, name, age, gender, course, salary,
+        retired, teaching_age, tel_number, politics_sta,
+        house_address, grade, native_place, email, stu_estimate,
+        dateofentry, dateofbirth, edu_background, motto, trait
+    </sql>
+
+    <select id="findAllTeachers" resultType="com.example.second.entity.Teacher">
+        select * from teacher
+    </select>
+
+    <select id="findTeacherByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from teacher where name = #{name,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteTeachersByIds">
+        delete from teacher where uid in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="getCountTeachers" resultType="java.lang.Integer">
+        select count(uid) as count from teacher
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from teacher
+        where uid = #{uid,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteTeacherById" parameterType="java.lang.Long">
+        delete from teacher
+        where uid = #{uid,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.second.entity.Teacher">
+        insert into teacher (uid, name, age,
+                             gender, course, salary, retired, teaching_age,
+                             tel_number, politics_sta, house_address,
+                             grade, native_place, email, stu_estimate,
+                             dateofentry, dateofbirth, edu_background, motto, trait)
+        values (#{uid,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+                #{gender,jdbcType=VARCHAR},#{course,jdbcType=VARCHAR}, #{salary,jdbcType=BIGINT},
+                #{retired,jdbcType=VARCHAR},#{teaching_age,jdbcType=INTEGER},#{tel_number,jdbcType=BIGINT},
+                #{politics_sta,jdbcType=VARCHAR}, #{house_address,jdbcType=VARCHAR},#{grade,jdbcType=VARCHAR},
+                #{native_place,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},#{stu_estimate,jdbcType=INTEGER},
+                #{dateofentry,jdbcType=VARCHAR}, #{dateofbirth,jdbcType=VARCHAR},#{edu_background,jdbcType=VARCHAR},
+                #{motto,jdbcType=VARCHAR}, #{trait,jdbcType=VARCHAR}
+               )
+    </insert>
+    <insert id="addTeacher" parameterType="com.example.second.entity.Teacher">
+        insert into teacher
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="age != null">
+                age,
+            </if>
+            <if test="gender != null">
+                gender,
+            </if>
+            <if test="course != null">
+                course,
+            </if>
+            <if test="salary != null">
+                salary,
+            </if>
+            <if test="retired != null">
+                retired,
+            </if>
+            <if test="teaching_age != null">
+                teaching_age,
+            </if>
+            <if test="tel_number != null">
+                tel_number,
+            </if>
+            <if test="politics_sta != null">
+                politics_sta,
+            </if>
+            <if test="house_address != null">
+                house_address,
+            </if>
+            <if test="grade != null">
+                grade,
+            </if>
+            <if test="native_place != null">
+                native_place,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="stu_estimate != null">
+                stu_estimate,
+            </if>
+            <if test="dateofentry != null">
+                dateofentry,
+            </if>
+            <if test="dateofbirth != null">
+                dateofbirth,
+            </if>
+            <if test="edu_background != null">
+                edu_background,
+            </if>
+            <if test="motto != null">
+                motto,
+            </if>
+            <if test="trait != null">
+                trait,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                #{uid,jdbcType=BIGINT},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                #{age,jdbcType=INTEGER},
+            </if>
+            <if test="gender != null">
+                #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="course != null">
+                #{course,jdbcType=VARCHAR},
+            </if>
+            <if test="salary != null">
+                #{salary,jdbcType=BIGINT},
+            </if>
+            <if test="retired != null">
+                #{retired,jdbcType=VARCHAR},
+            </if>
+            <if test="teaching_age != null">
+                #{teaching_age,jdbcType=INTEGER},
+            </if>
+            <if test="tel_number != null">
+                #{tel_number,jdbcType=BIGINT},
+            </if>
+            <if test="politics_sta != null">
+                #{politics_sta,jdbcType=VARCHAR},
+            </if>
+            <if test="house_address != null">
+                #{house_address,jdbcType=VARCHAR},
+            </if>
+            <if test="grade != null">
+                #{grade,jdbcType=VARCHAR},
+            </if>
+            <if test="native_place != null">
+                #{native_place,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="stu_estimate != null">
+                #{stu_estimate,jdbcType=INTEGER},
+            </if>
+            <if test="dateofentry != null">
+                #{dateofentry,jdbcType=VARCHAR},
+            </if>
+            <if test="dateofbirth != null">
+                #{dateofbirth,jdbcType=VARCHAR},
+            </if>
+            <if test="edu_background != null">
+                #{edu_background,jdbcType=VARCHAR},
+            </if>
+            <if test="motto != null">
+                #{motto,jdbcType=VARCHAR},
+            </if>
+            <if test="trait != null">
+                #{trait,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateTeacher" parameterType="com.example.second.entity.Teacher">
+        update teacher
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                age = #{age,jdbcType=INTEGER},
+            </if>
+            <if test="gender != null">
+                gender = #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="course != null">
+                course = #{course,jdbcType=VARCHAR},
+            </if>
+            <if test="salary != null">
+                salary = #{salary,jdbcType=BIGINT},
+            </if>
+            <if test="retired != null">
+                retired = #{retired,jdbcType=VARCHAR},
+            </if>
+            <if test="teaching_age != null">
+                teaching_age = #{teaching_age,jdbcType=INTEGER},
+            </if>
+            <if test="tel_number != null">
+                tel_number = #{tel_number,jdbcType=BIGINT},
+            </if>
+            <if test="politics_sta != null">
+                politics_sta = #{politics_sta,jdbcType=VARCHAR},
+            </if>
+            <if test="house_address != null">
+                house_address = #{house_address,jdbcType=VARCHAR},
+            </if>
+            <if test="grade != null">
+                grade = #{grade,jdbcType=VARCHAR},
+            </if>
+            <if test="native_place != null">
+                native_place = #{native_place,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="stu_estimate != null">
+                stu_estimate = #{stu_estimate,jdbcType=INTEGER},
+            </if>
+            <if test="dateofentry != null">
+                dateofentry = #{dateofentry,jdbcType=VARCHAR},
+            </if>
+            <if test="dateofbirth != null">
+                dateofbirth = #{dateofbirth,jdbcType=VARCHAR},
+            </if>
+            <if test="edu_background != null">
+                edu_background = #{edu_background,jdbcType=VARCHAR},
+            </if>
+            <if test="motto != null">
+                motto = #{motto,jdbcType=VARCHAR},
+            </if>
+            <if test="trait != null">
+                trait = #{trait,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where uid = #{uid,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.second.entity.Teacher">
+        update teacher
+        set name = #{name,jdbcType=VARCHAR},
+            age = #{age,jdbcType=INTEGER},
+            gender = #{gender,jdbcType=VARCHAR},
+            course = #{course,jdbcType=VARCHAR},
+            salary = #{salary,jdbcType=BIGINT},
+            retired = #{retired,jdbcType=VARCHAR},
+            teaching_age = #{teaching_age,jdbcType=INTEGER},
+            tel_number = #{tel_number,jdbcType=BIGINT},
+            politics_sta = #{politics_sta,jdbcType=VARCHAR},
+            house_address = #{house_address,jdbcType=VARCHAR},
+            grade = #{grade,jdbcType=VARCHAR},
+            native_place = #{native_place,jdbcType=VARCHAR},
+            email = #{email,jdbcType=VARCHAR},
+            stu_estimate = #{stu_estimate,jdbcType=INTEGER},
+            dateofentry = #{dateofentry,jdbcType=VARCHAR},
+            dateofbirth = #{dateofbirth,jdbcType=VARCHAR},
+            edu_background = #{edu_background,jdbcType=VARCHAR},
+            motto = #{motto,jdbcType=VARCHAR},
+            trait = #{trait,jdbcType=VARCHAR}
+        where uid = #{uid,jdbcType=BIGINT}
+    </update>
+</mapper>
