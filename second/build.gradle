@@ -28,7 +28,7 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.3.RELEASE'
     compile group: 'com.alibaba', name: 'druid', version: '1.1.10'
-    compile group: 'org.springframework', name: 'spring-aop', version: '4.3.14.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aop', version: '5.2.1.RELEASE'
     //aop注解
     compile group: 'org.aspectj', name: 'aspectjrt', version: '1.9.6'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.3.3.RELEASE'
