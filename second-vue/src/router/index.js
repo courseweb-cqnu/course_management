@@ -7,6 +7,8 @@ import Login from '../views/Login'
 import Main from "@/views/Main";
 import Score from "@/views/Score";
 import Course from "@/views/Course";
+import College from '@/views/College'
+import Literature from '@/views/Literature'
 
 Vue.use(VueRouter);
 
@@ -51,7 +53,20 @@ const routes = [
         component: Teacher
       }
     ]
+  },
+  {
+    path: '/main/college',
+    name: 'College',
+    component: College,
+    children:[
+      {
+        path: '/literature',
+        name: 'Literature',
+        component: Literature
+      }
+    ]
   }
+
 ]
 
 const router = new VueRouter({
