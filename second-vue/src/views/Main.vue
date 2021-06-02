@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="main_container">
    <section class="container">
     <div class="header">
       <div class="logo">
@@ -17,7 +17,7 @@
             active-text-color="	#696969"
             router
         >
-          <el-menu-item index="/main" style="font-size: small" >首页</el-menu-item>
+          <el-menu-item index="/main/college" style="font-size: small" >学院课程</el-menu-item>
         </el-menu>
       </div>
       <div class="search">
@@ -195,6 +195,7 @@
 
 
      <div class="course_container">
+
       <div class="sub_course_container">
 
         <el-col :span="2.4" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
@@ -232,6 +233,10 @@
             <span style="float: right ;margin-right: 20px">冯骥</span>
           </el-card>
         </el-col>
+      </div>
+
+
+      <div class="sub_course_container1">
         <el-col :span="2.4" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
           <el-card :body-style="{ padding: '0px' }" class="course_card">
             <img src="../image/pc11.jpg" class="course_image" @click="$router.push('/main/course')"/>
@@ -281,6 +286,7 @@
 
 
      <div class="course_container2">
+
        <div class="sub_course_container2">
 
          <el-col :span="2.4" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
@@ -311,6 +317,10 @@
              <span style="float: right ;margin-right: 20px">冯骥</span>
            </el-card>
          </el-col>
+       </div>
+
+
+       <div class="sub_course_container3">
          <el-col :span="2.4" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
            <el-card :body-style="{ padding: '0px' }" class="course_card2">
              <img src="../image/pc10.jpg" class="course_image" @click="$router.push('/main/course')"/>
@@ -340,6 +350,7 @@
            </el-card>
          </el-col>
        </div>
+
      </div>
 
 
@@ -381,11 +392,13 @@ export default {
 .sec_header{
   float: left;
   background-color:#F5F5F5;
-  width: 1950px;
+  /*width: 1950px;*/
+  width: 100%;
 }
 .sub_sec_header{
   float: left;
-  width: 1800px;
+  /*width: 1800px;*/
+  width: 100%;
   margin-left: 150px;
 }
 .submenu{
@@ -400,7 +413,7 @@ export default {
 }
 .main_menu{
   float: left;
-  width: 70px;
+  width: 92px;
   margin-left: 20px;
 }
 .search{
@@ -445,14 +458,22 @@ export default {
 }
 .course_container{
   width: 1950px;
-  height: 630px;
+  height: 700px;
+  background-color: white;
 }
 .sub_course_container{
   width: 1750px;
-  height: 630px;
+  height: 350px;
   background-color: white;
   margin-left: 150px;
-  margin-right: 150px;
+  /*margin-right: 150px;*/
+}
+.sub_course_container1{
+  width: 1750px;
+  height: 350px;
+  background-color: white;
+  margin-left: 150px;
+  /*margin-right: 150px;*/
 }
 .course_image{
   width: 260px;
@@ -460,25 +481,41 @@ export default {
 }
 .course_card{
   width: 260px;
-  height: 310px;
+  height: 320px;
   margin-right: 85px;
-  margin-top: 5px;
+  margin-top: 25px;
 }
+.course_card:hover{
+  margin-top: -2px;
+}
+
 .course_card2{
   width: 260px;
   height: 310px;
   margin-right: 170px;
-  margin-top: 5px;
+  margin-top: 25px;
+}
+.course_card2:hover{
+  margin-top: -2px;
 }
 .course_container2{
   width: 1950px;
   height: 700px;
   background-color: #F5F5F5;
+  /*background-color: white;*/
 }
 .sub_course_container2{
   width: 1750px;
-  height: 700px;
+  height: 350px;
   background-color: #F5F5F5;
+  /*background-color: white;*/
+  margin-left: 200px;
+  margin-right: 150px;
+}
+.sub_course_container3{
+  width: 1750px;
+  height: 350px;
+  /*background-color: #F5F5F5;*/
   margin-left: 200px;
   margin-right: 150px;
 }

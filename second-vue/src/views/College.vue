@@ -1,5 +1,58 @@
 <template>
   <div>
+    <el-container class="container">
+      <div class="header">
+        <div class="logo">
+          <h3>重师精品课
+            <el-divider direction="vertical"></el-divider>
+          </h3>
+        </div>
+        <div class="main_menu">
+          <el-menu
+            :default-active="$route.path"
+            class="main_menu"
+            mode="horizontal"
+            background-color="#FF4040"
+            text-color="#fff"
+            active-text-color="	#696969"
+            router
+          >
+            <el-menu-item
+              index="/main"
+              style="font-size: small"
+            >首页</el-menu-item>
+          </el-menu>
+        </div>
+        <div class="search">
+          <el-input
+            placeholder="请输入课程或者老师名称"
+            prefix-icon="el-icon-search"
+            v-model="searching"
+          >
+          </el-input>
+        </div>
+        <div class="right_menu">
+          <el-menu
+            :default-active="$route.path"
+            class="el-menu-nav"
+            mode="horizontal"
+            background-color="#FF4040"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+            router
+          >
+            <el-menu-item
+              index="/main/home"
+              style="color: white; font-size: small"
+            >后台管理</el-menu-item>
+            <el-menu-item
+              index="/"
+              style="font-size: small"
+            >退出系统</el-menu-item>
+          </el-menu>
+        </div>
+      </div>
+    </el-container>
     <el-menu
       class="el-menu-demo"
       :default-active="this.$route.path"
@@ -7,7 +60,7 @@
       @open="handleOpen"
       @close="handleClose"
       active-text-color="#DC143C"
-       @select="reload"
+      @select="reload"
     >
       <!-- <el-menu-item index="1" >文学院</el-menu-item>
       <el-menu-item index="2">数学科学学院</el-menu-item>
@@ -20,7 +73,6 @@
         v-for="(item,i) in colleges"
         :key="i"
         :index="item.name"
-       
       >
         <template slot="title">
           <span> {{ item.name }}</span>
@@ -45,11 +97,15 @@
       </el-carousel>
     </div>
     <!-- <router-view></router-view> -->
+    <el-divider
+      content-position="left"
+      style="font-size:100px"
+    >学院课程</el-divider>
     <div>
       <div class="course_container">
         <div class="sub_course_container">
           <el-row
-            :gutter="100"
+            :gutter="70"
             class="el-row"
           >
             <el-col
@@ -159,6 +215,11 @@ export default {
           { name: "Computer Science", teacher: "xcc" },
           { name: "Computer Scien", teacher: "xcy" },
         ];
+      else if (index == "化学学院") {
+      } else if (index == "旅游学院") {
+      } else if (index == "计算机与信息科学学院") {
+      } else if (index == "物理与电子工程学院") {
+      }
     },
   },
 };
@@ -237,5 +298,38 @@ export default {
   height: 310px;
   margin-right: 170px;
   margin-top: 5px;
+}
+.header {
+  float: top;
+  width: 100%;
+  background-color: #ff4040;
+  color: white;
+}
+.logo {
+  float: left;
+  width: 160px;
+  letter-spacing: 5px;
+  font-size: large;
+  margin-left: 10%;
+}
+.main_menu{
+  float: left;
+  width: 70px;
+  margin-left: 20px;
+}
+.search{
+  float: left;
+  padding-top: 1em;
+  width: 200px;
+  margin-left: 40%;
+}
+.right_menu{
+  float: left;
+  width: 220px;
+  margin-left: 10%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
 }
 </style>

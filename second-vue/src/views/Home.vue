@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-header class="home-header">
-        <div class="title">学生管理系统</div>
+        <div class="title">课程管理系统</div>
         <div class="user-info">
           <el-dropdown trigger="click" @command="logout">
         <span>
@@ -31,7 +31,7 @@
             <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item><a href="/">{{this.$router.currentRoute.name}}</a></el-breadcrumb-item>
           </el-breadcrumb>
-          <div v-if="this.$router.currentRoute.path === '/home'">欢迎来到学生管理系统</div>
+          <div v-if="this.$router.currentRoute.path === '/home'">欢迎来到课程管理系统</div>
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -82,8 +82,8 @@ export default {
 </script>
 <style scoped>
 .home-header {
-  background-color: #409eff;
-  height: 60px;
+  background-color: #FF4040;
+  height: 80px;
   line-height: 60px;
   display: flex;
 }
