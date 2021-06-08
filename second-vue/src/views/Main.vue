@@ -501,15 +501,15 @@ export default {
 .course_container2{
   width: 1950px;
   height: 700px;
-  /*background-color: #F5F5F5;*/
-  background-color: yellow;
+  background-color: #F5F5F5;
+  /*background-color: yellow;*/
   /*background-color: white;*/
 }
 .sub_course_container2{
   width: 1750px;
   height: 350px;
-  /*background-color: #F5F5F5;*/
-  background-color: darkviolet;
+  background-color: #F5F5F5;
+  /*background-color: darkviolet;*/
   /*background-color: white;*/
   margin-left: 200px;
   margin-right: 150px;
@@ -517,8 +517,8 @@ export default {
 .sub_course_container3{
   width: 1750px;
   height: 350px;
-  /*background-color: #F5F5F5;*/
-  background-color: aqua;
+  background-color: #F5F5F5;
+  /*background-color: aqua;*/
   margin-left: 200px;
   margin-right: 150px;
 }
