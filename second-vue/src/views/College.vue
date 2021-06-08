@@ -105,7 +105,7 @@
       <div class="course_container_c">
         <div class="sub_course_container_c">
           <el-row
-            :gutter="70"
+            gutter="70"
             class="el-row"
           >
             <el-col
@@ -115,7 +115,7 @@
             >
               <el-card :body-style="{padding: '0px'}">
                 <img
-                  src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                  :src="item.image"
                   class="image_c"
                 >
                 <div style="padding: 14px;">
@@ -160,18 +160,18 @@ export default {
       //   ],
       colleges: [],
       courses: [
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
-        { name: "Computer Science", teacher: "xcy" },
+        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=1833636327,1532683158&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=3344707173,3015676222&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=4259926672,1520544321&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=734695632,1224698756&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=2543000902,3462352363&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=450267319,2106900508&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=150723695,728383380&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=4018728060,3332512352&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=3432723299,1272092050&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=897133358,1940136062&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=397553363,3685779531&fm=224&fmt=auto&gp=0.jpg"},
+        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=476692959,2474494726&fm=224&fmt=auto&gp=0.jpg"},
       ],
     };
   },
@@ -299,5 +299,6 @@ export default {
 .container_c {
   display: flex;
   flex-direction: column;
+  /* src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" */
 }
 </style>
