@@ -1,16 +1,16 @@
 <template>
   <div>
-    <el-container class="container">
-      <div class="header">
-        <div class="logo">
+    <el-container class="container_c">
+      <div class="header_c">
+        <div class="logo_c">
           <h3>重师精品课
             <el-divider direction="vertical"></el-divider>
           </h3>
         </div>
-        <div class="main_menu">
+        <div class="main_menu_c">
           <el-menu
             :default-active="$route.path"
-            class="main_menu"
+            class="main_menu_c"
             mode="horizontal"
             background-color="#FF4040"
             text-color="#fff"
@@ -23,7 +23,7 @@
             >首页</el-menu-item>
           </el-menu>
         </div>
-        <div class="search">
+        <div class="search_c">
           <el-input
             placeholder="请输入课程或者老师名称"
             prefix-icon="el-icon-search"
@@ -31,7 +31,7 @@
           >
           </el-input>
         </div>
-        <div class="right_menu">
+        <div class="right_menu_c">
           <el-menu
             :default-active="$route.path"
             class="el-menu-nav"
@@ -102,8 +102,8 @@
       style="font-size:100px"
     >学院课程</el-divider>
     <div>
-      <div class="course_container">
-        <div class="sub_course_container">
+      <div class="course_container_c">
+        <div class="sub_course_container_c">
           <el-row
             :gutter="70"
             class="el-row"
@@ -116,7 +116,7 @@
               <el-card :body-style="{padding: '0px'}">
                 <img
                   src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                  class="image"
+                  class="image_c"
                 >
                 <div style="padding: 14px;">
                   <span>{{item.name}}</span>
@@ -236,15 +236,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-.el-col {
-  /* border-radius: 4px; */
-  align-items: stretch;
-  margin-bottom: 40px;
-}
-.time {
-  font-size: 13px;
-  color: #999;
-}
 
 .bottom {
   margin-top: 13px;
@@ -256,7 +247,7 @@ export default {
   float: right;
 }
 
-.image {
+.image_c {
   width: 100%;
   display: block;
 }
@@ -270,65 +261,47 @@ export default {
 .clearfix:after {
   clear: both;
 }
-.course_container {
+.course_container_c {
   width: 100%;
   height: 630px;
 }
-.sub_course_container {
+.sub_course_container_c {
   width: 80%;
   height: 630px;
   background-color: white;
   margin-left: 150px;
   margin-right: 150px;
 }
-.course_image {
-  width: 100%;
-  display: block;
-  /* width: 260px;
-  height: 280px; */
-}
-.course_card {
-  width: 260px;
-  height: 310px;
-  margin-right: 85px;
-  margin-top: 5px;
-}
-.course_card2 {
-  width: 260px;
-  height: 310px;
-  margin-right: 170px;
-  margin-top: 5px;
-}
-.header {
+.header_c {
   float: top;
   width: 100%;
   background-color: #ff4040;
   color: white;
 }
-.logo {
+.logo_c {
   float: left;
   width: 160px;
   letter-spacing: 5px;
   font-size: large;
-  margin-left: 10%;
+  margin-left: 12.5%;
 }
-.main_menu{
+.main_menu_c{
   float: left;
-  width: 70px;
+  width: 71px;
   margin-left: 20px;
 }
-.search{
+.search_c{
   float: left;
   padding-top: 1em;
   width: 200px;
-  margin-left: 40%;
+  margin-left: 41%;
 }
-.right_menu{
+.right_menu_c{
   float: left;
   width: 220px;
-  margin-left: 10%;
+  margin-left: 1%;
 }
-.container{
+.container_c{
   display: flex;
   flex-direction: column;
 }

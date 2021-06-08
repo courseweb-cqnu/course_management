@@ -7,10 +7,10 @@
         <el-divider direction="vertical"></el-divider>
         </h3>
       </div>
-      <div class="main_menu">
+      <div class="main_menu1">
         <el-menu
             :default-active="$route.path"
-            class="main_menu"
+            class="main_menu1"
             mode="horizontal"
             background-color="#FF4040"
             text-color="#fff"
@@ -25,7 +25,7 @@
             placeholder="请输入课程或者老师名称" prefix-icon="el-icon-search" v-model="searching">
         </el-input>
       </div>
-      <div class="right_menu">
+      <div class="right_menu1">
         <el-menu
           :default-active="$route.path"
           class="el-menu-nav"
@@ -385,8 +385,8 @@ export default {
 }
 .header{
   float: top;
-  width: 1950px;
-  background-color: #FF4040;
+  width: 100%;
+  background-color: #ff4040;
   color: white;
 }
 .sec_header{
@@ -409,9 +409,9 @@ export default {
   width: 160px;
   letter-spacing: 5px;
   font-size: large;
-  margin-left: 150px;
+  margin-left: 12%;
 }
-.main_menu{
+.main_menu1{
   float: left;
   width: 92px;
   margin-left: 20px;
@@ -420,12 +420,12 @@ export default {
   float: left;
   padding-top: 1em;
   width: 200px;
-  margin-left: 500px;
+  margin-left: 39%;
 }
-.right_menu{
+.right_menu1{
   float: left;
   width: 220px;
-  margin-left: 500px;
+  margin-left: 1%;
 }
 .cards{
   margin-left: 150px;
@@ -486,7 +486,7 @@ export default {
   margin-top: 25px;
 }
 .course_card:hover{
-  margin-top: -2px;
+  margin-top: -1px;
 }
 
 .course_card2{
@@ -496,18 +496,20 @@ export default {
   margin-top: 25px;
 }
 .course_card2:hover{
-  margin-top: -2px;
+  margin-top: -1px;
 }
 .course_container2{
   width: 1950px;
   height: 700px;
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
+  background-color: yellow;
   /*background-color: white;*/
 }
 .sub_course_container2{
   width: 1750px;
   height: 350px;
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
+  background-color: darkviolet;
   /*background-color: white;*/
   margin-left: 200px;
   margin-right: 150px;
@@ -516,6 +518,7 @@ export default {
   width: 1750px;
   height: 350px;
   /*background-color: #F5F5F5;*/
+  background-color: aqua;
   margin-left: 200px;
   margin-right: 150px;
 }

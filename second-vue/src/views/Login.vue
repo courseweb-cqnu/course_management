@@ -86,12 +86,12 @@
         color: #505458
     }
     .logo{
-      float: bottom;
       color: white;
+      float: left;
       width: 160px;
       letter-spacing: 5px;
       font-size: large;
-      margin-left: 150px;
+      margin-left: 12%;
     }
     .login {
 
