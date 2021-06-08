@@ -236,28 +236,23 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-
 .bottom {
   margin-top: 13px;
   line-height: 12px;
 }
-
 .button {
   padding: 0;
   float: right;
 }
-
 .image_c {
   width: 100%;
   display: block;
 }
-
 .clearfix:before,
 .clearfix:after {
   display: table;
   content: "";
 }
-
 .clearfix:after {
   clear: both;
 }
@@ -283,25 +278,25 @@ export default {
   width: 160px;
   letter-spacing: 5px;
   font-size: large;
-  margin-left: 10%;
+  margin-left: 12.5%;
 }
-.main_menu{
+.main_menu_c {
   float: left;
-  width: 70px;
+  width: 71px;
   margin-left: 20px;
 }
-.search{
+.search_c {
   float: left;
   padding-top: 1em;
   width: 200px;
-  margin-left: 40%;
+  margin-left: 41%;
 }
-.right_menu{
+.right_menu_c {
   float: left;
   width: 220px;
-  margin-left: 10%;
+  margin-left: 1%;
 }
-.container{
+.container_c {
   display: flex;
   flex-direction: column;
 }

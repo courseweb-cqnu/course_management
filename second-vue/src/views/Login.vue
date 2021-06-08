@@ -26,7 +26,6 @@
 
 <script>
     import {postKeyValueRequest} from "../config/interceptor";
-
     export default {
         name: "Login",
         data () {
@@ -66,7 +65,6 @@
 </script>
 
 <style scoped>
-
     .container{
       display: flex;
       flex-direction: column;
@@ -74,7 +72,6 @@
       /*width: 1930px;*/
       width: 100%;
       height: 935px;
-
     }
     .main_header{
       width: 1930px;
@@ -94,7 +91,6 @@
       margin-left: 12%;
     }
     .login {
-
         /*background-image: url("~@/image/pc1.jpg");*/
         width: 380px;
         height: 400px;
