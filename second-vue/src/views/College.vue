@@ -89,8 +89,8 @@
           <div class="block">
             <el-image
               :src="item"
-              fit="contain"
-              style="height: 300px"
+              fit="fill"
+              style="height: 300px; width:100%"
             ></el-image>
           </div>
         </el-carousel-item>
@@ -113,7 +113,7 @@
               v-for="(item, index) in courses"
               :key="index"
             >
-              <el-card :body-style="{padding: '0px'}">
+              <el-card :body-style="{padding: '0px'}" class="card_c">
                 <img
                   :src="item.image"
                   class="image_c"
@@ -145,8 +145,8 @@ export default {
   data() {
     return {
       src: [
-        "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
-        "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
+        'https://img0.baidu.com/it/u=921356931,592195905&fm=26&fmt=auto&gp=0.jpg',
+        "https://img1.baidu.com/it/u=2481857905,3837195964&fm=26&fmt=auto&gp=0.jpg",
         "https://www.cqnu.edu.cn/images/banner11.jpg",
       ],
       //   navList: [
@@ -301,4 +301,11 @@ export default {
   flex-direction: column;
   /* src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" */
 }
+.card_c{
+  /* width: 260px;
+  height: 320px; */
+  /* margin-right: 85px; */
+  margin-top: 25px;
+}
+
 </style>
