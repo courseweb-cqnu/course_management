@@ -125,7 +125,7 @@
                       type="text"
                       class="button"
                       @click="c"
-                    >操作按钮</el-button>
+                    >课程详情</el-button>
                   </div>
                 </div>
               </el-card>
