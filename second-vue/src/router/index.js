@@ -9,6 +9,7 @@ import Score from "@/views/Score";
 import Course from "@/views/Course";
 import College from '@/views/College'
 import Literature from '@/views/Literature'
+import College_manager from '@/views/College_manager'
 
 Vue.use(VueRouter);
 
@@ -37,7 +38,7 @@ const routes = [
     component: Home,
     hidden: true
   },
-  {
+  {     
     path: '/home',
     name: '导航一',
     component: Home,
@@ -51,6 +52,10 @@ const routes = [
         path: '/teacher',
         name: '教师学生',
         component: Teacher
+      },
+      {
+        path: '/college_manager',
+        component: College_manager
       }
     ]
   },

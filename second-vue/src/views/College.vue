@@ -113,7 +113,10 @@
               v-for="(item, index) in courses"
               :key="index"
             >
-              <el-card :body-style="{padding: '0px'}" class="card_c">
+              <el-card
+                :body-style="{padding: '0px'}"
+                class="card_c"
+              >
                 <img
                   :src="item.imageUrl"
                   class="image_c"
@@ -145,7 +148,7 @@ export default {
   data() {
     return {
       src: [
-        'https://img0.baidu.com/it/u=921356931,592195905&fm=26&fmt=auto&gp=0.jpg',
+        "https://img0.baidu.com/it/u=921356931,592195905&fm=26&fmt=auto&gp=0.jpg",
         "https://img1.baidu.com/it/u=2481857905,3837195964&fm=26&fmt=auto&gp=0.jpg",
         "https://www.cqnu.edu.cn/images/banner11.jpg",
       ],
@@ -160,25 +163,85 @@ export default {
       //   ],
       colleges: [],
       courses: [
-        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=1833636327,1532683158&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=3344707173,3015676222&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img0.baidu.com/it/u=4259926672,1520544321&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=734695632,1224698756&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=2543000902,3462352363&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=450267319,2106900508&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=150723695,728383380&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=4018728060,3332512352&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=3432723299,1272092050&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=897133358,1940136062&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=397553363,3685779531&fm=224&fmt=auto&gp=0.jpg"},
-        { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=476692959,2474494726&fm=224&fmt=auto&gp=0.jpg"},
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img0.baidu.com/it/u=1833636327,1532683158&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img0.baidu.com/it/u=3344707173,3015676222&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img0.baidu.com/it/u=4259926672,1520544321&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img2.baidu.com/it/u=734695632,1224698756&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img1.baidu.com/it/u=2543000902,3462352363&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img2.baidu.com/it/u=450267319,2106900508&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img2.baidu.com/it/u=150723695,728383380&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img1.baidu.com/it/u=4018728060,3332512352&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img2.baidu.com/it/u=3432723299,1272092050&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img1.baidu.com/it/u=897133358,1940136062&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img2.baidu.com/it/u=397553363,3685779531&fm=224&fmt=auto&gp=0.jpg",
+        },
+        {
+          name: "Computer Science",
+          teacher: "xcy",
+          image:
+            "https://img1.baidu.com/it/u=476692959,2474494726&fm=224&fmt=auto&gp=0.jpg",
+        },
       ],
-      courses2: [
-      ],
+      courses2: [],
     };
   },
   created() {
     this.findAllColleges();
+    this.findAllCourses();
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -213,42 +276,28 @@ export default {
           });
         });
     },
-    searchCourseByCollege (collegeId) {
-        if (this.collegeId !== '') {
-            this.$axios.get("/course/findCourseByCollege?collegeId="+collegeId).then( (resp)=> {
-                this.courses = resp.data;
-            }).catch( (error)=>{
-                this.$message({
-                    type: 'error',
-                    message: "查询失败，原因是"+error.data.message
-                });
-            })
-        }
+    searchCourseByCollege(collegeId) {
+      if (this.collegeId !== "") {
+        this.$axios
+          .get("/course/findCourseByCollege?collegeId=" + collegeId)
+          .then((resp) => {
+            this.courses = resp.data;
+          })
+          .catch((error) => {
+            this.$message({
+              type: "error",
+              message: "查询失败，原因是" + error.data.message,
+            });
+          });
+      }
     },
     reload(index, indexPath) {
-      if (index == "文学院") this.courses = [];
-      else if (index == "数学科学学院")
-        this.courses = [
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcy" },
-          { name: "Computer Science", teacher: "xcc" },
-          { name: "Computer Scien", teacher: "xcy" },
-        ];
-      else if (index == "化学学院") {
-        this.findAllCourses();
-      } else if (index == "旅游学院") {
-        this.searchCourseByCollege(5);
-      } else if (index == "计算机与信息科学学院") {
-      } else if (index == "物理与电子工程学院") {
-      }
+      if (index == "文学院") this.searchCourseByCollege(1);
+      else if (index == "数学科学学院") this.searchCourseByCollege(2);
+      else if (index == "化学学院") this.searchCourseByCollege(3);
+      else if (index == "旅游学院") this.searchCourseByCollege(4);
+      else if (index == "计算机与信息科学学院") this.searchCourseByCollege(5);
+      else if (index == "物理与电子工程学院") this.searchCourseByCollege(6);
     },
   },
 };
@@ -330,11 +379,10 @@ export default {
   flex-direction: column;
   /* src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" */
 }
-.card_c{
+.card_c {
   /* width: 260px;
   height: 320px; */
   /* margin-right: 85px; */
   margin-top: 25px;
 }
-
 </style>
