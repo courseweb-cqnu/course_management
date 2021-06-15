@@ -50,10 +50,10 @@
             <if test="id != null">
                 id,
             </if>
-            <if test="title != null">
+            <if test="pattern != null">
                 pattern,
             </if>
-            <if test="date != null">
+            <if test="name != null">
                 name,
             </if>
         </trim>
