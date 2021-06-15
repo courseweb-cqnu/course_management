@@ -115,7 +115,7 @@
             >
               <el-card :body-style="{padding: '0px'}" class="card_c">
                 <img
-                  :src="item.image"
+                  :src="item.imageUrl"
                   class="image_c"
                 >
                 <div style="padding: 14px;">
@@ -173,6 +173,8 @@ export default {
         { name: "Computer Science", teacher: "xcy" , image: "https://img2.baidu.com/it/u=397553363,3685779531&fm=224&fmt=auto&gp=0.jpg"},
         { name: "Computer Science", teacher: "xcy" , image: "https://img1.baidu.com/it/u=476692959,2474494726&fm=224&fmt=auto&gp=0.jpg"},
       ],
+      courses2: [
+      ],
     };
   },
   created() {
@@ -198,6 +200,31 @@ export default {
           });
         });
     },
+    findAllCourses() {
+      this.$axios
+        .get("/course/findAllCourses")
+        .then((res) => {
+          this.courses = res.data;
+        })
+        .catch((error) => {
+          this.$message({
+            type: "error",
+            message: "查询失败，原因是" + error.data.message,
+          });
+        });
+    },
+    searchCourseByCollege (collegeId) {
+        if (this.collegeId !== '') {
+            this.$axios.get("/course/findCourseByCollege?collegeId="+collegeId).then( (resp)=> {
+                this.courses = resp.data;
+            }).catch( (error)=>{
+                this.$message({
+                    type: 'error',
+                    message: "查询失败，原因是"+error.data.message
+                });
+            })
+        }
+    },
     reload(index, indexPath) {
       if (index == "文学院") this.courses = [];
       else if (index == "数学科学学院")
@@ -216,7 +243,9 @@ export default {
           { name: "Computer Scien", teacher: "xcy" },
         ];
       else if (index == "化学学院") {
+        this.findAllCourses();
       } else if (index == "旅游学院") {
+        this.searchCourseByCollege(5);
       } else if (index == "计算机与信息科学学院") {
       } else if (index == "物理与电子工程学院") {
       }
